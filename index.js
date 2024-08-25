@@ -1,48 +1,77 @@
 // TODO: Include packages needed for this application
 import inquirer from 'inquirer';
 import fs, { writeFile } from 'fs';
-import generateMarkdown from './utils/generateMarkdown';
 import path from 'path';
 
 // TODO: Create an array of questions for user input
-inquirer.prompt ([
-{
-    name: "title",
-    type: "input",
-    message: "What is the name of this project?"
-},
-{
-    name: 'description',
-    type: "input",
-    message: "What is the purpose of this page?"
-},
-{
-    name: 'questions',
-    type: "input",
-    message: "Enter an email address wheere you can be reached for more questions:"
-},
-{
-    name: 'github',
-    type: "input",
-    message: "Enter a link to your Github profile:"
-},
-{
-    name: 'screenshot',
-    type: "input",
-    message: "Enter a link to a screenshot of your project:"
-}
+inquirer.prompt([
+    {
+        name: "title",
+        type: "input",
+        message: "What is the name of this project?"
+    },
+    {
+        name: 'description',
+        type: "input",
+        message: "What is the purpose of this Readme?"
+    },
+    {
+        name: 'contents',
+        type: "input",
+        message: "Enter the Table of Contents of your project:"
+    },
+    {
+        name: 'installation',
+        type: "input",
+        message: "Provide instructions on how to install:"
+    },
+    {
+        name: 'usage',
+        type: "input",
+        message: "What is your project used for?"
+    },
+    {
+        name: 'guidelines',
+        type: "input",
+        message: "Enter the guidelines for contribution:"
+    },
+    {
+        name: 'test',
+        type: "input",
+        message: "Enter test instructons:"
+    },
+    {
+        name: 'questions',
+        type: "input",
+        message: "Enter an email address where you can be reached for more questions:"
+    },
+    {
+        name: 'github',
+        type: "input",
+        message: "Enter a link to your Github profile:"
+    },
+    {
+        name: 'screenshot',
+        type: "input",
+        message: "Enter a link to a screenshot of your project:"
+    },
+    {
+        name: 'license',
+        type: "input",
+        message: "What is the license you're using?",
+        choices: ["MIT", "GPL", "Apache", "BSD", "None"],
+    }
 
 ]).then((answers) => {
-    const userTemplate = fillTemplate(answers);
+    const userTemplate = writeToFile(answers);
     writeFile(userTemplate);
-
 });
 
 
 
 // TODO: Create a function to write README file
 // function writeToFile(fileName, data) {}
-function writeToFile(fileName, data) {
+function writeToFile(answers) {
     return `<!DOCTYPE html>
             <html lang="en">
             <head>
@@ -55,6 +84,11 @@ function writeToFile(fileName, data) {
                 <section>
                     <h2>${answers.title}</h2>
                     <p>Description: ${answers.description}</p>
+                    <p>Table of Contents: ${answers.contents}</p>
+                    <p>Installation: ${answers.installation}</p>
+                    <p>Usage: ${answers.usage}</p>
+                    <p>Guidelines: ${answers.guidelines}</p>
+                    <p>Test Instructions: ${answers.test}</p>
                     <img src="${answers.screenshot}" alt="screenshot of project">
                 </section>
                 <section>
@@ -67,7 +101,7 @@ function writeToFile(fileName, data) {
 }
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() { }
 
 // Function call to initialize app
 init();
