@@ -38,7 +38,11 @@ inquirer.prompt ([
 
 });
 
-function fillTemplate(answers) {
+
+
+// TODO: Create a function to write README file
+// function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
     return `<!DOCTYPE html>
             <html lang="en">
             <head>
@@ -61,9 +65,6 @@ function fillTemplate(answers) {
             </body>
             </html>`
 }
-
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
 
 // TODO: Create a function to initialize app
 function init() {}
