@@ -44,19 +44,19 @@ function fillTemplate(answers) {
             <head>
                 <meta charset="UTF-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>${answers.name} Portfolio</title>
+                <title>${answers.title} Readme</title>
             </head>
             <body>
-                <h1>Portfolio</h1>
+                <h1>Readme</h1>
                 <section>
-                    <h2>${answers.name}</h2>
-                    <p>Location: ${answers.location}</p>
-                    <p>${answers.bio}</p>
+                    <h2>${answers.title}</h2>
+                    <p>Description: ${answers.description}</p>
+                    <img src="${answers.screenshot}" alt="screenshot of project">
                 </section>
                 <section>
                     <h2>Links:</h2>
-                    <a style="display: block;" href="${answers.github}">Github</a>
-                    <a style="display: block;" href="${answers.linkedin}">LinkedIn</a>
+                    <a style="display: block;" href="${answers.questions}">Questions</a>
+                    <a style="display: block;" href="${answers.github}">GitHub</a>
                 </section>
             </body>
             </html>`
