@@ -1,6 +1,6 @@
 // TODO: Include packages needed for this application
 import inquirer from 'inquirer';
-import fs, { writeFile } from 'fs';
+import fs from 'fs';
 import path from 'path';
 
 // TODO: Create an array of questions for user input
@@ -63,9 +63,11 @@ inquirer.prompt([
     }
 
 ]).then((answers) => {
+    console.log(answers);
     const userTemplate = writeToFile(answers);
     writeFile(userTemplate);
-});
+}).catch((err) => {
+    console.log(err) });
 
 
 
@@ -101,7 +103,15 @@ function writeToFile(answers) {
 }
 
 // TODO: Create a function to initialize app
-function init() { }
+function writeFile(htmlString) {
+    fs.writeFile('portfolio.html', htmlString, (err)=> {
+        if (err) {
+            console.error("Error writing file: ", err);
+        } else {
+            console.log("readme.html created!");
+        }
+    });
+ }
 
 // Function call to initialize app
-init();
+
