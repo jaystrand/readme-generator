@@ -104,7 +104,7 @@ function writeToFile(answers) {
 
 // TODO: Create a function to initialize app
 function writeFile(htmlString) {
-    fs.writeFile('portfolio.html', htmlString, (err)=> {
+    fs.writeFile('readme.html', htmlString, (err)=> {
         if (err) {
             console.error("Error writing file: ", err);
         } else {
