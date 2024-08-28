@@ -67,51 +67,104 @@ inquirer.prompt([
     const userTemplate = writeToFile(answers);
     writeFile(userTemplate);
 }).catch((err) => {
-    console.log(err) });
+    console.log(err)
+});
 
 
 
 // TODO: Create a function to write README file
-// function writeToFile(fileName, data) {}
+//function writeToFile(fileName, data) {}
 function writeToFile(answers) {
-    return `<!DOCTYPE html>
-            <html lang="en">
-            <head>
-                <meta charset="UTF-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>${answers.title} Readme</title>
-            </head>
-            <body>
-                <h1>Readme</h1>
-                <section>
-                    <h2>${answers.title}</h2>
-                    <p>Description: ${answers.description}</p>
-                    <p>Table of Contents: ${answers.contents}</p>
-                    <p>Installation: ${answers.installation}</p>
-                    <p>Usage: ${answers.usage}</p>
-                    <p>Guidelines: ${answers.guidelines}</p>
-                    <p>Test Instructions: ${answers.test}</p>
-                    <img src="${answers.screenshot}" alt="screenshot of project">
-                </section>
-                <section>
-                    <h2>Links:</h2>
-                    <a style="display: block;" href="${answers.questions}">Questions</a>
-                    <a style="display: block;" href="${answers.github}">GitHub</a>
-                </section>
-            </body>
-            </html>`
+    return (`<!DOCTYPE html>
+        <html lang="en">
+             <head>
+                 <meta charset="UTF-8">
+                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                 <title>${answers.title} Readme</title>
+             </head>
+             <body>
+                # ${answers.title} ![Static Badge](https://img.shields.io/badge/License-${answers.license}-blue)
+
+                # Readme Generator
+
+                ## Description
+                ${answers.description}
+
+                ## Table of Contents
+
+                ## Installation
+               
+
+                ## Usage
+
+                This guide was created for students new to coding to use as an initial guide. This guide contains notes about HTML, CSS, and JavaScript. You will be able to see JavaScript running by opeing the DevTools console by right clicking on the page and choosing "Install" at the bottom of the list. The console will also randomly choose a topic to for the user to study first.
+
+                ## Guidelines
+
+                NA
+
+                ## Test Instructions
+
+                ##Screenshot
+
+                ## License
+
+                MIT License
+                Copyright (c) 2024 Hydro8188
+
+    
+             </body>
+        </html>`
+    )
 }
+
+
 
 // TODO: Create a function to initialize app
 function writeFile(htmlString) {
-    fs.writeFile('readme.html', htmlString, (err)=> {
+    fs.writeFile('readme.html', htmlString, (err) => {
         if (err) {
             console.error("Error writing file: ", err);
         } else {
             console.log("readme.html created!");
         }
     });
- }
+}
 
 // Function call to initialize app
+init();
 
+
+// return `# ${answers.title} ![Static Badge](https://img.shields.io/badge/License-${answers.license}-blue)
+
+
+// # Readme Generator
+
+// ## Description
+// ${answers.description}
+
+// ## Table of Contents
+
+// ## Installation
+
+// N/A
+
+// ## Usage
+
+// This guide was created for students new to coding to use as an initial guide. This guide contains notes about HTML, CSS, and JavaScript. You will be able to see JavaScript running by opeing the DevTools console by right clicking on the page and choosing "Install" at the bottom of the list. The console will also randomly choose a topic to for the user to study first.
+
+// ## Guidelines
+
+// N/A
+
+// ## Test Instructions
+
+// ##Screenshot
+
+// ## License
+
+// MIT License
+// Copyright (c) 2024 Hydro8188
+
+//     }`
+// }
