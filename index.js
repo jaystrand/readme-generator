@@ -31,14 +31,25 @@ inquirer.prompt([
         message: "What is your project used for?"
     },
     {
-        name: 'guidelines',
+        name: 'license',
         type: "input",
-        message: "Enter the guidelines for contribution:"
+        message: "What is the license you're using?",
+        choices: ["MIT", "GPL", "Apache", "BSD", "None"],
+    },
+    {
+        name: 'contributors',
+        type: "input",
+        message: "Who are your contributors?"
     },
     {
         name: 'test',
         type: "input",
         message: "Enter test instructons:"
+    },
+    {
+        name: 'screenshot',
+        type: "input",
+        message: "Enter a link to a screenshot of your project:"
     },
     {
         name: 'questions',
@@ -49,17 +60,6 @@ inquirer.prompt([
         name: 'github',
         type: "input",
         message: "Enter a link to your Github profile:"
-    },
-    {
-        name: 'screenshot',
-        type: "input",
-        message: "Enter a link to a screenshot of your project:"
-    },
-    {
-        name: 'license',
-        type: "input",
-        message: "What is the license you're using?",
-        choices: ["MIT", "GPL", "Apache", "BSD", "None"],
     }
 
 ]).then((answers) => {
@@ -89,8 +89,20 @@ function writeToFile(answers) {
 
                 ## Description
                 ${answers.description}
+                This study guide was created to provide basic information to new students learning how to code for the first time. This information helped me as a beginner coder, and I thoughht this information could help other first time coders. 
+
+                I learned that the 3 different areas of coding, HTML, CSS, and JavaScript play an important role in creating a webpage. Think of each as a differnt step in building a house. HTML would be the building of the frame of a house, CSS would be the decoration and styling of the house, and JavaScript would be the function of the house.
+
 
                 ## Table of Contents
+                ### Installation
+                ### License
+                ### Usage
+                ### Contributing
+                ### Test
+                ### Screenshot
+                ### Questions
+
 
                 ## Installation
                

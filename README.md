@@ -18,14 +18,7 @@ N/A
 
 This guide was created for students new to coding to use as an initial guide. This guide contains notes about HTML, CSS, and JavaScript. You will be able to see JavaScript running by opeing the DevTools console by right clicking on the page and choosing "Install" at the bottom of the list. The console will also randomly choose a topic to for the user to study first.
 
-## Credits
-
-N/A
-
 ## License
 
 MIT License
 Copyright (c) 2024 Hydro8188
-
-    }`
-}
