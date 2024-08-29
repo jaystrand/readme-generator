@@ -1,10 +1,10 @@
-// TODO: Include packages needed for this application
+// Import necessary packages
 import inquirer from 'inquirer';
 import fs from 'fs';
 import generateMarkdown from './utils/generateMarkdown.js';
 
-// TODO: Create an array of questions for user input
-inquirer.prompt([
+// Array of questions for user input
+const questions = [
     {
         name: 'title',
         type: 'input',
@@ -32,7 +32,7 @@ inquirer.prompt([
     },
     {
         name: 'license',
-        type: "list",
+        type: 'list',
         message: 'What is the license you are using?',
         choices: ['MIT', 'GPL', 'Apache', 'BSD', 'None'],
     },
@@ -44,7 +44,7 @@ inquirer.prompt([
     {
         name: 'test',
         type: 'input',
-        message: "Enter test instructons:",
+        message: 'Enter test instructions:',
     },
     {
         name: 'screenshot',
@@ -58,40 +58,35 @@ inquirer.prompt([
     },
     {
         name: 'github',
-        type: "input",
-        message: "Enter a link to your Github profile:",
+        type: 'input',
+        message: 'Enter a link to your Github profile:',
     },
+];
 
-]).then((answers) => {
-
-}
-);
-
-// TODO: Create a function to write README file
-//function writeToFile(fileName, data) {}
-
-
-// TODO: Create a function to initialize app
-function writeToFile(data) {
-    return generateMarkdown(data);
-}
-
-function writeFile(userTemplate) {
-    fs.writeFile('README.md', userTemplate, (err) => {
+// Function to write README file
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, (err) => {
         if (err) {
             console.error(err);
+        } else {
+            console.log('README.md file created successfully.');
         }
-        console.log('File created');
     });
 }
 
+// Function to initialize app
 function init() {
-    // Function call to write README file
-    //writeToFile('README.md', generateMarkdown(data));
+    inquirer.prompt(questions)
+        .then((answers) => {
+            // Generate markdown content from the user answers
+            const markdownContent = generateMarkdown(answers);
+            // Write the content to a README.md file
+            writeToFile('README.md', markdownContent);
+        })
+        .catch((error) => {
+            console.error('Error prompting user:', error);
+        });
 }
-
 
 // Function call to initialize app
 init();
-
-
