@@ -1,2 +1,0 @@
-# jermaine.strand@yahoo.com
-
