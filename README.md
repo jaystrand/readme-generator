@@ -1,31 +1,33 @@
 
-# Study Guide
+![badge](https://img.shields.io/badge/license-MIT-blue)
+
+# Music
 
 ## Description
-Use as a study guide
+learn music
 
 ## Table of Contents
-- Description
-- Installation
-- Usage
-- License
-- Contributors
-- Tests
-- Questions
+- ###[Description](#description)
+- ###[Installation](#installation)
+- ###[Usage](#usage)
+- ###[License](#license)
+- ###[Contributors](#contributors)
+- ###[Tests](#tests)
+- ###[Questions](#questions)
 
-
+jazz, rock, soul
 
 ## Installation
-try this
+play this
 
 ## Usage
-used as study guide
+playing music
 
 ## License
 This project is licensed under the MIT license.
 
 ## Contributors
-jermaine
+me
 
 ## Tests
 try this
@@ -34,6 +36,6 @@ try this
 !Screenshot
 
 ## Questions
-For any questions, please contact me at: jermaine.strand@yahoo.com.
-Github Profile: jermaine.strand@yahoo.com.
+For any questions, please contact me at: me@me.com.
+Github Profile: github.com.
   
