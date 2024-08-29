@@ -1,7 +1,11 @@
 // utils/generateMarkdown.js
 
 export default function generateMarkdown(data) {
+ 
+const badgeURL = 'https://img.shields.io/badge/license-' + encodeURIComponent(data.license) + '-blue';
   return `
+![badge](${badgeURL})
+
 # ${data.title}
 
 ## Description
