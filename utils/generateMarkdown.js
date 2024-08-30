@@ -37,19 +37,9 @@ ${data.contributors}
 ## Tests
 ${data.test}
 
-## Screenshot
-!Screenshot
-
 ## Questions
 For any questions, please contact me at: ${data.questions}.
 Github Profile: ${data.github}.
   `;
 }
 
-// - ###[Description](#description)
-// - ###[Installation](#installation)
-// - ###[Usage](#usage)
-// - ###[License](#license)
-// - ###[Contributors](#contributors)
-// - ###[Tests](#tests)
-// - ###[Questions](#questions)

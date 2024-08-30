@@ -47,11 +47,6 @@ const questions = [
         message: 'Enter test instructions:',
     },
     {
-        name: 'screenshot',
-        type: 'input',
-        message: 'Enter a link to a screenshot of your project:',
-    },
-    {
         name: 'questions',
         type: 'input',
         message: 'Enter an email address where you can be reached for more questions:',
